@@ -38,6 +38,7 @@ a{
   border-color: inherit;
 
 }
+
 .gap-10{
   gap: 10px;
 }
@@ -354,9 +355,42 @@ display: none;
 /* Special Product part */
 
 .special-product-card{
-  padding: 10px;
+  padding:20px 10px;
   border-radius: 10px;
   background-color: white;
 }
 
+
+
 /* Special product ends */
+
+/* famous card */
+.famous-card .famous-content{
+  top: 10%;
+  left: 5%;
+}
+.famous-card img{
+  border-radius: 10px;
+}
+.famous-content h5{
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 7px;
+}
+.famous-content h6{
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: 500;
+  color: white;
+}
+.famous-content p{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 100;
+  color: white;
+}
+
+/* famous card ends */
