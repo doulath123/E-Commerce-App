@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import BreadCrumb from '../components/BreadCrumb'
 import {Helmet} from 'react-helmet'
 import Meta from '../components/Meta'
 import ReactStars from 'react-rating-stars-component'
 function OurStore() {
+  const [grid, setGrid]=useState(4);
+ alert(grid);
   return <>
   <Meta title={"Our Store"}/>
   <BreadCrumb title="Our Store"/>
@@ -114,7 +116,7 @@ function OurStore() {
             <div>
               <div className='random-products mb-3 d-flex'>
                 <div className='w-50'>
-                  <img src='images/watch.jpg' className='img-fluid' alt='watch' />
+                  <img onClick={()=>{setGrid()}}  src='images/watch.jpg' className='img-fluid' alt='watch' />
                 </div>
                 <div className='w-50'>
                   <h5>Kids Headphones Bulk10 Pack Multi Colored For_</h5>
@@ -126,7 +128,7 @@ function OurStore() {
               </div>
               <div className='random-products d-flex'>
                 <div className='w-50'>
-                  <img src='images/watch.jpg' className='img-fluid' alt='watch' />
+                  <img onClick={()=>{setGrid()}}  src='images/watch.jpg' className='img-fluid' alt='watch' />
                 </div>
                 <div className='w-50'>
                   <h5>Kids Headphones Bulk10 Pack Multi Colored For_</h5>
@@ -139,7 +141,38 @@ function OurStore() {
             </div>
           </div>
         </div>
-        <div className='col-9'></div>
+        <div className='col-9'>
+          <div className='filter-sort-grid mb-4'>
+            <div className='d-flex justify-content-between align-items-center'>
+            <div className='d-flex align-items-center gap-10'>
+              <p className='mb-0 d-block' style={{'width':"100px"}}>Sort By:</p>
+              <select name='' className='form-control form-select' id='' >
+                <option value="manual">Featured</option>
+                <option value="best-selling" selected="selected">Best selling</option>
+                <option value="title-ascending">Alphabetically, A-Z</option>
+                <option value="title-descending">Alphabetically, A-Z</option>
+                <option value="price-ascending">Price, low to high</option>
+                <option value="price-descending">Price, high to low</option>
+                <option value="created-ascending">Date, old to new</option>
+                <option value="created-descending">Date, new to old</option>
+              </select>
+            </div>
+            <div className='d-flex align-items-center gap-10'>
+              <p className='totalproducts mb-0'>21 Products</p>
+              <div className='d-flex gap-10 align-items-center grid'>
+                <img onClick={()=>{setGrid(4)}}  src='images/gr4.svg' alt='grid' className='d-block img-fluid' />
+                <img onClick={()=>{setGrid(3)}}  src='images/gr3.svg' alt='grid' className='d-block img-fluid' />
+                <img onClick={()=>{setGrid(2)}}  src='images/gr2.svg' alt='grid' className='d-block img-fluid' />
+                <img onClick={()=>{setGrid(1)}}  src='images/gr.svg' alt='grid' className='d-block img-fluid' />
+              </div>
+
+            </div>
+            </div>
+          </div>
+          <div className='products-list pb-5'>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
