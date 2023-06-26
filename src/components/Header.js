@@ -19,7 +19,7 @@ function Header() {
     <div className='container-xxl'>
         <div className='row align-items-center'>
             <div className='col-2'>
-                <h2><Link className='text-white'>Dev Corner</Link></h2>
+                <h2><Link className='text-white'>DOULATH</Link></h2>
             </div>
             <div className='col-5'>
             <div className="input-group">
@@ -93,7 +93,7 @@ function Header() {
                     <div className='d-flex align-items-center gap-15'>
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/store'>Our Store</NavLink>
-                        <NavLink to='/'>Blogs</NavLink>
+                        <NavLink to='/blogs'>Blogs</NavLink>
                         <NavLink to='/contact'>Contact</NavLink>
                     </div>
                 </div>

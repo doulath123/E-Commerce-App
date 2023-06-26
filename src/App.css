@@ -341,6 +341,11 @@ display: none;
   font-size: 16px;
   color: var(--color-1c1c1b);
 }
+.product-card p.description{
+  font-size: 13px;
+  color: var(--color-777777);
+  margin-right: 20px;
+}
 .action-bar{
   top: 10%;
   right: -23px;
@@ -493,7 +498,10 @@ display: none;
 .gr-12 .product-card .product-image{
   width: 270px;
 }
+.gr-12 .product-card .product-image{
+  height:auto ;
+}
 .gr-12 .action-bar{
-  top: 13%;
+  top: 17%;
 }
 /* Our store ends */
