@@ -11,7 +11,7 @@ function BlogCard() {
             <p className='date'>11 JUNE, 2022</p>
             <h5 className='title'>A Beautiful Sunday Marning Renaissance</h5>
             <p className='desc'>You're Only As Good As Your Last Collection, Which Is An Enormous Pressure. I Think There Is Something About..</p>
-            <Link className='button' to="">Read More</Link>
+            <Link className='button' to="/blog/:id">Read More</Link>
 
         </div>
     </div>
