@@ -4,12 +4,12 @@ import Marquee from 'react-fast-marquee'
 import BlogCard from '../components/BlogCard'
 import ProductCard from '../components/ProductCard'
 import SpecialProduct from '../components/SpecialProduct'
-
+import Container from '../components/Container'
+import { services } from '../utils/Data'
 function Home() {
   return <>
-  <section className='home-wrapper-1 py-5'>
-    <div className='container-xxl'>
-      <div className='row'>
+  <Container  class1='home-wrapper-1 py-5'>
+  <div className='row'>
         <div className='col-6'>
         <div className='main-banner position-relative'>
             <img src="images/main-banner-1.jpg" className='img-fluid rounder-3' alt='main banner' />
@@ -68,63 +68,29 @@ function Home() {
 
           </div>
       </div>
-    </div>
-
-  </section>
-  <section className='home-wrapper-2 py-5'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1="home-wrapper-2 py-5">
+  <div className='row'>
         <div className='col-12'>
-          <div className='servicess d-flex align-items-center justify-content-between'>
+          <div className='servies d-flex align-items-center justify-content-between'>
 
-            <div className='d-flex align-items-center gap-15'>
-              <img src='images/service.png' alt='services'/>
+            {services?.map((i, j)=>{
+              return (
+                <div className='d-flex align-items-center gap-15 ' key={j}>
+              <img src={i.image} alt='services'/>
               <div>
-              <h6>Free Shippping</h6>
-              <p className='mb-0'>From all orders over $100</p>
+              <h6>{i.title}</h6>
+              <p className='mb-0'>{i.tagline}</p>
               </div>
             </div>
-
-            <div className='d-flex align-items-center gap-15'>
-              <img src='images/service-02.png' alt='services'/>
-              <div>
-              <h6>Daily Surprise Offers</h6>
-              <p className='mb-0'>Save up to 25% off</p>
-              </div>
-            </div>
-
-            <div className='d-flex align-items-center gap-15'>
-              <img src='images/service-03.png' alt='services'/>
-              <div>
-              <h6>Support 24/7</h6>
-              <p className='mb-0'>Shop with an expert</p>
-              </div>
-            </div>
-
-            <div className='d-flex align-items-center gap-15'>
-              <img src='images/service-04.png' alt='services'/>
-              <div>
-              <h6>Affordable Prices</h6>
-              <p className='mb-0'>Get Factory direct price</p>
-              </div>
-            </div>
-
-            <div className='d-flex align-items-center gap-15'>
-              <img src='images/service-05.png' alt='services'/>
-              <div>
-              <h6>Secure Payments</h6>
-              <p className='mb-0'>100% Protected Payments</p>
-              </div>
-            </div>
-
+              )
+            })}
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section className='home-wrapper-2 py-5'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1="home-wrapper-2 py-5">
+  <div className='row'>
         <div className='col-12'>
           <div className='categories d-flex flex-wrap justify-content-between align-items-center'>
 
@@ -197,11 +163,9 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section className='featured-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1='featured-wrapper py-5 home-wrapper-2'>
+  <div className='row'>
         <div className='col-12'>
           <h3 className='section-heading'>Featured Colletion</h3>
         </div>
@@ -210,11 +174,9 @@ function Home() {
         <ProductCard/>
         <ProductCard/>
       </div>
-    </div>
-  </section>
-  <section className='famous-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1='famous-wrapper py-5 home-wrapper-2'>
+  <div className='row'>
         <div className='col-3'>
           <div className='famous-card position-relative'>
             <img src='images/famous-1.webp' className='img-fluid' alt='famous'/>
@@ -256,11 +218,9 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section className='special-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1='special-wrapper py-5 home-wrapper-2'>
+  <div className='row'>
         <div className='col-12'>
           <h3 className='section-heading'>Special Products</h3>
         </div>
@@ -271,11 +231,9 @@ function Home() {
         <SpecialProduct/>
         <SpecialProduct/>
       </div>
-    </div>
-  </section>
-  <section className='popular-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1='popular-wrapper py-5 home-wrapper-2'>
+  <div className='row'>
         <div className='col-12'>
           <h3 className='section-heading'>Our Popular Products</h3>
         </div>
@@ -287,11 +245,9 @@ function Home() {
         <ProductCard/>
         <ProductCard/>
       </div>
-    </div>
-  </section>
-  <section className='marque-wrapper py-5'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1='marque-wrapper py-5'>
+  <div className='row'>
         <div className='col-12'>
           <div className='marquee-inner-wrapper card-wrapper'>
             <Marquee className='d-flex'>
@@ -330,12 +286,9 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <section className='blog-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1='blog-wrapper py-5 home-wrapper-2'>
+  <div className='row'>
         <div className='col-12'>
           <h3 className='section-heading'>Our Latest Blogs</h3>
         </div>
@@ -359,8 +312,10 @@ function Home() {
         
       </div>
       </div>
-    </div>
-  </section>
+  </Container>
+  
+  
+
   </>
 }
 

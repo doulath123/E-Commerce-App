@@ -8,17 +8,26 @@ import ReactImageZoom from 'react-image-zoom';
 import Color from '../components/Color';
 import {TbGitCompare} from "react-icons/tb"
 import {AiOutlineHeart} from "react-icons/ai"
+import Container from '../components/Container';
 
 function SingleProduct() {
   const props = {height: 600, zoomWidth: 600, img: "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-fernando-arcos-190819.jpg&fm=jpg"};
   const [orderedProduct, setorderedProduct]=useState(true)
+  const copyToClipboard = (text)=>{
+    console.log('text', text);
+    var textField = document.createElement("textarea");
+    textField.innerText=text;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand("copy");
+    textField.remove();
+  };
   return (
     <>
     <Meta title={"Product Name"}/>
   <BreadCrumb title="Product Name"/>
-  <div className='main-product-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-        <div className='row'>
+  <Container class1="main-product-wrapper py-5 home-wrapper-2">
+  <div className='row'>
             <div className='col-6'>
               <div className='main-product-image'>
                 <div><ReactImageZoom {...props} /></div>
@@ -44,7 +53,7 @@ function SingleProduct() {
                 </div>
                 <a className='review-btn' href='#review'>Write a Review</a>
                 </div>
-                <div className='border-bottom py-3'>
+                <div className=' py-3'>
                   <div className='d-flex gap-10 align-items-center my-2'>
                     <h3 className='product-heading'>Type :</h3> <p className='product-data'>Watch</p>
                   </div>
@@ -84,6 +93,8 @@ function SingleProduct() {
                     </div>
                   </div>
                   <div className='d-flex align-items-center gap-15'>
+                    
+                    
                     <div>
                       <a href=''><TbGitCompare className='fs-5 me-2'/>Add to compare</a>
                     </div>
@@ -91,16 +102,22 @@ function SingleProduct() {
                       <a href=''><AiOutlineHeart className='fs-5 me-2'/>Add to wishlist</a>
                     </div>
                   </div>
+                  <div className='d-flex gap-10 flex-column my-3'>
+                    <h3 className='product-heading'>Shipping & Returns:</h3> 
+                    <p className='product-data'>Free shipping and returns available on all orders! <br/> We ship all Us domestic orders within <b>5-10 business days!</b></p>
+                  </div>
+                  <div className='d-flex gap-10 align-items-center my-3'>
+                    <h3 className='product-heading'>Product Link :</h3> 
+                    <a href='javascript:void(0);' onClick={()=>{copyToClipboard("https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-fernando-arcos-190819.jpg&fm=jpg")}}>Copy Product Link</a>
+                  </div>
                 </div>
                
               </div>
             </div>
         </div>
-    </div>
-  </div>
-  <div className='description-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-        <div className='row'>
+  </Container>
+  <Container class1="description-wrapper py-5 home-wrapper-2">
+  <div className='row'>
             <div className='col-12'>
             <h4>Description</h4>
                 <div className='bg-white p-3'>
@@ -109,11 +126,9 @@ function SingleProduct() {
                 </div>
             </div>
         </div>
-    </div>
-  </div>
-  <section className='reviews-wrapper home-wrapper-2'>
-    <div className='container-xxl'>
-        <div className='row'>
+  </Container>
+  <Container class1="reviews-wrapper home-wrapper-2">
+  <div className='row'>
             <div className='col-12'>
               <h3 id="review" >Reviews</h3>
                <div className='review-inner-wrapper'>
@@ -164,11 +179,9 @@ function SingleProduct() {
                </div>
             </div>
         </div>
-    </div>
-  </section>
-  <section className='popular-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  </Container>
+  <Container class1="popular-wrapper py-5 home-wrapper-2">
+  <div className='row'>
         <div className='col-12'>
           <h3 className='section-heading'>Our Popular Products</h3>
         </div>
@@ -178,9 +191,8 @@ function SingleProduct() {
       <ProductCard/>
         
       </div>
-    </div>
-  </section>
-
+  </Container>
+ 
     </>
   )
 }

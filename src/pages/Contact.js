@@ -3,15 +3,16 @@ import Meta from '../components/Meta'
 import BreadCrumb from '../components/BreadCrumb'
 import {AiOutlineHome, AiOutlineMail} from "react-icons/ai"
 import {BiPhoneCall, BiInfoCircle} from "react-icons/bi"
+import Container from '../components/Container'
+import CustomInput from '../components/CustomInput'
 
 const Contact = () => {
   return (
     <>
      <Meta title={"Contact"}/>
   <BreadCrumb title="Contact"/>
-  <div className='contact-wrapper py-5 home-wrapper-2'>
-    <div className='container-xxl'>
-      <div className='row'>
+  <Container class1="contact-wrapper py-5 home-wrapper-2">
+  <div className='row'>
         <div className='col-12'>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d751085.351740996!2d78.09071496732798!3d15.900013711135392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5ddf506b7c6c9%3A0x19a7ac74f858d6f2!2sKurnool%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1687862222315!5m2!1sen!2sin" width="600" height="450" className='border-0 w-100' allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -20,17 +21,10 @@ const Contact = () => {
             <div>
               <h3 className='contact-title mb-4'>Contact</h3>
               <form action='' className='d-flex flex-column gap-15'>
-                <div>
-                  <input type='text' className='form-control' placeholder='Name'/>
-                </div>
+              <CustomInput type='text' className='form-control' placeholder='Name'  />
+              <CustomInput type='email' className='form-control' placeholder='Email'  />
+              <CustomInput type='tel' className='form-control' placeholder='Mobile Number'  />
 
-                <div>
-                  <input type='email' className='form-control' placeholder='Email'/>
-                </div>
-
-                <div>
-                  <input type='tel' className='form-control' placeholder='Mobile Number' />
-                </div>
 
                 <div>
                   <textarea name='' id='' className='w-100 form-control' cols="30" rows="4" placeholder='Comments'></textarea>
@@ -66,8 +60,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
-  </div>
+  </Container>
     </>
   )
 }
